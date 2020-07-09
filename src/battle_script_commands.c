@@ -4345,6 +4345,7 @@ static void Cmd_playstatchangeanimation(void)
                         && ability != ABILITY_FULL_METAL_BODY
                         && ability != ABILITY_WHITE_SMOKE
                         && !(ability == ABILITY_KEEN_EYE && currStat == STAT_ACC)
+                        && !(ability == ABILITY_SHARP_FOCUS && currStat == STAT_ACC)
                         && !(ability == ABILITY_HYPER_CUTTER && currStat == STAT_ATK)
                         && !(ability == ABILITY_BIG_PECKS && currStat == STAT_DEF))
                 {
@@ -8640,6 +8641,20 @@ static u32 ChangeStatBuffs(s8 statValue, u32 statId, u32 flags, const u8 *BS_ptr
             return STAT_CHANGE_DIDNT_WORK;
         }
         else if (GetBattlerAbility(gActiveBattler) == ABILITY_KEEN_EYE
+                 && !certain && statId == STAT_ACC)
+        {
+            if (flags == STAT_BUFF_ALLOW_PTR)
+            {
+                BattleScriptPush(BS_ptr);
+                gBattleScripting.battler = gActiveBattler;
+                gBattlerAbility = gActiveBattler;
+                gBattlescriptCurrInstr = BattleScript_AbilityNoSpecificStatLoss;
+                gLastUsedAbility = GetBattlerAbility(gActiveBattler);
+                RecordAbilityBattle(gActiveBattler, gLastUsedAbility);
+            }
+            return STAT_CHANGE_DIDNT_WORK;
+        }
+        else if (GetBattlerAbility(gActiveBattler) == ABILITY_SHARP_FOCUS
                  && !certain && statId == STAT_ACC)
         {
             if (flags == STAT_BUFF_ALLOW_PTR)

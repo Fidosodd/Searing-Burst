@@ -50,6 +50,7 @@ static const u8 sEarlyBirdDescription[] = _("Awakens quickly from sleep.");
 static const u8 sFlameBodyDescription[] = _("Burns the foe on contact.");
 static const u8 sRunAwayDescription[] = _("Makes escaping easier.");
 static const u8 sKeenEyeDescription[] = _("Prevents loss of accuracy.");
+static const u8 sSharpFocusDescription[] = _("Prevents loss of accuracy and flinching.");
 static const u8 sHyperCutterDescription[] = _("Prevents Attack reduction.");
 static const u8 sPickupDescription[] = _("May pick up items.");
 static const u8 sTruantDescription[] = _("Moves only every two turns.");
@@ -222,7 +223,7 @@ static const u8 sGrassySurgeDescription[] = _("Field becomes grassy.");
 static const u8 sFullMetalBodyDescription[] = _("Prevents stat reduction.");
 static const u8 sNeuroforceDescription[] = _("Ups “super effective.“.");
 
-const u8 gAbilityNames[ABILITIES_COUNT_GEN7][ABILITY_NAME_LENGTH + 1] =
+const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
     [ABILITY_NONE] = _("-------"),
     [ABILITY_STENCH] = _("Stench"),
@@ -276,6 +277,7 @@ const u8 gAbilityNames[ABILITIES_COUNT_GEN7][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_FLAME_BODY] = _("Flame Body"),
     [ABILITY_RUN_AWAY] = _("Run Away"),
     [ABILITY_KEEN_EYE] = _("Keen Eye"),
+    [ABILITY_SHARP_FOCUS] = _("Sharp Focus"),
     [ABILITY_HYPER_CUTTER] = _("Hyper Cutter"),
     [ABILITY_PICKUP] = _("Pickup"),
     [ABILITY_TRUANT] = _("Truant"),
@@ -461,7 +463,7 @@ const u8 gAbilityNames[ABILITIES_COUNT_GEN7][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_NEUROFORCE] = _("Neuroforce"),
 };
 
-const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT_GEN7] =
+const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
 {
     [ABILITY_NONE] = sNoneDescription,
     [ABILITY_STENCH] = sStenchDescription,
@@ -515,6 +517,7 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT_GEN7] =
     [ABILITY_FLAME_BODY] = sFlameBodyDescription,
     [ABILITY_RUN_AWAY] = sRunAwayDescription,
     [ABILITY_KEEN_EYE] = sKeenEyeDescription,
+    [ABILITY_SHARP_FOCUS] = sSharpFocusDescription,
     [ABILITY_HYPER_CUTTER] = sHyperCutterDescription,
     [ABILITY_PICKUP] = sPickupDescription,
     [ABILITY_TRUANT] = sTruantDescription,

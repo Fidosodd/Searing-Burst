@@ -52,6 +52,7 @@ static const u8 sAbilitiesAffectedByMoldBreaker[] =
     [ABILITY_INNER_FOCUS] = 1,
     [ABILITY_INSOMNIA] = 1,
     [ABILITY_KEEN_EYE] = 1,
+    [ABILITY_SHARP_FOCUS] = 1,
     [ABILITY_LEAF_GUARD] = 1,
     [ABILITY_LEVITATE] = 1,
     [ABILITY_LIGHTNING_ROD] = 1,
